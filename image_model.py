@@ -11,7 +11,7 @@ from constants import path_image, path_label
 
 from data_preprocess import read_data, INPUT_IMG_SIZE
 
-from additinal_finctions import show_confusion_matrix
+from additinal_functions import show_confusion_matrix
 
 df = pd.read_csv(path_label)
 

@@ -15,7 +15,7 @@ from constants import path_image, path_label, TEXT_MAX_LENGTH, INPUT_IMG_SIZE, b
 
 from data_preprocess import preprocess_text, read_data, preprocess_bert_data, preprocess_lstm_data, fit_tokenizer, create_embedding
 
-from additinal_finctions import show_confusion_matrix
+from additinal_functions import show_confusion_matrix
 
 from threshold_algorithm import get_threshold_values
 

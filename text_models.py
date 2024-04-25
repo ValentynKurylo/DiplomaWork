@@ -19,7 +19,7 @@ from constants import path_data, TEXT_MAX_LENGTH, bert_model_name
 
 from data_preprocess import preprocess_text, fit_tokenizer, preprocess_lstm_data, create_embedding, preprocess_bert_data
 
-from additinal_finctions import show_confusion_matrix
+from additinal_functions import show_confusion_matrix
 
 df = pd.read_csv(path_data)
 
