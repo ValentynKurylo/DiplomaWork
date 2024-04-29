@@ -64,9 +64,9 @@ def make_prediction_and_get_results(model, label_test, test_seq_tf, test_mask_tf
     return prediction
 
 
-def get_results_with_coefficients(label_test, pred):
+def get_results_with_coefficients(label_test, pred, train_pred, train_label):
     test_true, test_pred = [], []
-    k1, k2 = get_threshold_values(pred, label_test, df)
+    k1, k2 = get_threshold_values(train_pred, train_label, df)
     for i in range(len(pred)):
         if pred[i] >= k2:
             test_pred.append(1)
@@ -133,4 +133,6 @@ model.evaluate([[test_seq_tf, test_mask_tf], img_test, sequences_test], label_te
 
 prediction = make_prediction_and_get_results(model, label_test, test_seq_tf, test_mask_tf, img_test, sequences_test)
 
-get_results_with_coefficients(label_test, prediction)
+train_prediction = make_prediction_and_get_results(model, label_train, train_seq_tf, train_mask_tf, img_train, sequences_train)
+
+get_results_with_coefficients(label_test, prediction, train_prediction, label_train)
